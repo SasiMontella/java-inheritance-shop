@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Carrello {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        HashSet<String> cart = new HashSet<>();
+        HashSet<Prodotto> cart = new HashSet<>();
         boolean sino = false;
         while(!sino) {
             System.out.println("Vuoi aggiungere un prodotto al carrello? (y/n)");
@@ -29,7 +29,7 @@ public class Carrello {
                     System.out.println("Inserisci la RAM dello smartphone: ");
                     int smartRam = scan.nextInt();
                     Smartphone prodottoScelto = new Smartphone(smartName, smartDesc, smartPrezzo, smartIva, smartRam);
-                    cart.add(String.valueOf(prodottoScelto));
+                    cart.add(prodottoScelto);
                 } else if (tipoProdotto.equals("2")) {
                     System.out.println("Inserisci il nome del prodotto: ");
                     String tvName = scan.nextLine();
@@ -49,7 +49,7 @@ public class Carrello {
                         tvSmart = "non è smart";
                     }
                     Televisori prodottoTvScelto = new Televisori(tvName, tvDesc, tvPrezzo, tvIva, tvPollici, tvSmart);
-                    cart.add(String.valueOf(prodottoTvScelto));
+                    cart.add(prodottoTvScelto);
                 } else if (tipoProdotto.equals("3")) {
                     System.out.println("Inserisci il nome del prodotto: ");
                     String cuffieName = scan.nextLine();
@@ -69,7 +69,7 @@ public class Carrello {
                         cuffieCavo = "sono wireless";
                     }
                     Cuffie prodottoCuffieScelto = new Cuffie(cuffieName, cuffieDesc, cuffiePrezzo, cuffieIva, cuffieColore, cuffieCavo);
-                    cart.add(String.valueOf(prodottoCuffieScelto));
+                    cart.add(prodottoCuffieScelto);
                 } else {
                     System.out.println("risposta non valida");
                 }
@@ -78,7 +78,9 @@ public class Carrello {
             }
         }
         System.out.println("Bene, ecco la tua lista:");
-        System.out.println(cart);
+       for (Prodotto prodotto: cart){
+           System.out.println(prodotto);
+       }
 
         scan.close();
     }

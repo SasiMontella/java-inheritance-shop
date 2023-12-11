@@ -69,6 +69,6 @@ public class Prodotto {
 
     @Override
     public String toString() {
-        return "Descrizione prodotto: " + codice + nome + "\n" + descrizione + "\n" + prezzo + "€" + "\n" + iva + "\n" + "prezzo con iva: " + getPrezzoIva() + "€";
+        return "Descrizione prodotto: " + codice + "  " + nome + "\n" + descrizione + "\n" + prezzo + "€" + "\n" + iva + "\n" + "prezzo con iva: " + getPrezzoIva() + "€";
     }
 }
