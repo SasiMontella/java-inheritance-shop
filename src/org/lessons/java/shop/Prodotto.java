@@ -65,6 +65,7 @@ public class Prodotto {
     private int codiceRandom(){
         Random random = new Random();
         return random.nextInt(10000, 1000000);
+
     }
 
     @Override
