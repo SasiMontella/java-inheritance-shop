@@ -70,10 +70,9 @@ public class Carrello {
                     }
                     Cuffie prodottoCuffieScelto = new Cuffie(cuffieName, cuffieDesc, cuffiePrezzo, cuffieIva, cuffieColore, cuffieCavo);
                     cart.add(prodottoCuffieScelto);
-                } else {
-                    System.out.println("risposta non valida");
                 }
-            } else {
+            } else if (sceltaUtente.equals("n")) {
+                System.out.println("Okay!");
                 sino = true;
             }
         }
